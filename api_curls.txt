@@ -1,0 +1,19 @@
+API 1
+curl --location 'http://127.0.0.1:8000/api/v1/simulator/pokemon-list/2'
+
+
+API 2
+
+curl --location 'http://127.0.0.1:8000/api/v1/simulator/pokemon-fight/' \
+--header 'Content-Type: application/json' \
+--data '{
+    "pokemon1":"Metapod",
+    "pokemon2":"Butterfree"
+}'
+
+
+API 3
+
+curl --location 'http://127.0.0.1:8000/api/v1/simulator/pokemon-fight-result/?id=ede3cca03ea847cf99280e256ed4c4bb' \
+--header 'Content-Type: application/json' \
+--data ''
