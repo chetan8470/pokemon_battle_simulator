@@ -51,7 +51,7 @@ class PokemonBattleSimulatorViewSet(viewsets.ViewSet):
         # add in the celery
         fight_pokemon_player_taks.delay(pokemon1, pokemon2, str(game_model_obj.game_id.hex))
         return response.Ok({
-            'data' : str(game_model_obj.id)
+            'data' : str(game_model_obj.game_id)
         })
         
     

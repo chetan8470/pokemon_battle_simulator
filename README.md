@@ -17,5 +17,7 @@ in another to run the celery use command
 <!-- cd ..\venv\Scripts\
 cd ..\..\pokemon_battle_simulator\ -->
 
-# celery -A pokemon_battle_simulator worker -l info -P eventlet for winfows
-# celery -A pokemon_battle_simulator worker --loglevel=info     for linux
+<!-- # celery -A pokemon_battle_simulator worker -l info -P eventlet for winfows
+# celery -A pokemon_battle_simulator worker --loglevel=info     for linux -->
+<!-- AWS -->
+<!-- nohup python manage.py runserver 172.31.41.225:8001 && nohup celery -A pokemon_battle_simulator worker --loglevel=info -->
