@@ -1,0 +1,52 @@
+
+api to get list pokemon on page no 2
+
+    request:
+
+    curl --location 'http://127.0.0.1:8000/api/v1/simulator/pokemon-list/2'
+
+    response:
+    {
+        "data": [
+            "Metapod",
+            "Butterfree",
+            "Weedle",
+            "Kakuna",
+            "Beedrill",
+            "Pidgey",
+            "Pidgeotto",
+            "Pidgeot",
+            "Rattata",
+            "Raticate"
+        ]
+    }
+
+
+select 2 pokemon name [ 'Rattata', 'Beedrill']  call api for the fight 
+
+    curl --location 'http://13.235.243.78:8001/api/v1/simulator/pokemon-fight/' \
+    --header 'Content-Type: application/json' \
+    --data '{
+        "pokemon1":"Rattata",
+        "pokemon2":"Beedrill"
+    }'
+
+    response:
+    {
+        "data": "28b365be-fe9b-48fb-bcdf-bea0024cac9b"
+    }
+
+
+call the api for the fight result
+
+    curl --location 'http://13.235.243.78:8001/api/v1/simulator/pokemon-fight-result/?id=28b365be-fe9b-48fb-bcdf-bea0024cac9b' \
+    --header 'Content-Type: application/json'
+
+    response:
+    {
+        "status": "BATTLE_COMPLETED",
+        "result": {
+            "winnerName": "Beedrill",
+            "wonByMargin": "63.0"
+        }
+    }
