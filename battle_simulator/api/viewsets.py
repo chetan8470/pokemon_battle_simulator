@@ -8,7 +8,7 @@ from pokemon_utils.pokemon import Pokemon
 from base.pagination import PokemonSimulatorPagination
 import json
 from pokemon_utils.game import Game
-from battle_simulator.task import fight_pokemon_player_taks
+from battle_simulator.tasks import fight_pokemon_player_taks
 
 class PokemonBattleSimulatorViewSet(viewsets.ViewSet):
     
@@ -49,7 +49,7 @@ class PokemonBattleSimulatorViewSet(viewsets.ViewSet):
             battle_status = BattleStatus.BATTLE_INPROGRESS
         )
         # add in the celery
-        fight_pokemon_player_taks.delay(game_obj, str(game_model_obj.game_id.hex))
+        fight_pokemon_player_taks.delay(pokemon1, pokemon2, str(game_model_obj.game_id.hex))
         return response.Ok({
             'data' : str(game_model_obj.id)
         })

@@ -12,3 +12,10 @@ before start run command
 
 in another to run the celery use command
     celery -A battle_simulator  worker -l info -P eventlet
+
+
+<!-- cd ..\venv\Scripts\
+cd ..\..\pokemon_battle_simulator\ -->
+
+# celery -A pokemon_battle_simulator worker -l info -P eventlet for winfows
+# celery -A pokemon_battle_simulator worker --loglevel=info     for linux

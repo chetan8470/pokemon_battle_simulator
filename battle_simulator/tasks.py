@@ -6,7 +6,7 @@ from pokemon_utils.game import Game
 @shared_task
 def fight_pokemon_player_taks(pokemon1, pokemon2, id):
     try:
-        game_model_obj = PokemonFightGame.objects.get(user_id=id)
+        game_model_obj = PokemonFightGame.objects.get(game_id=id)
         g = Game(pokemon1, pokemon2)
         g.startGame()
         result, score =  g.fight_result()
@@ -21,4 +21,3 @@ def fight_pokemon_player_taks(pokemon1, pokemon2, id):
         game_model_obj.save()
     return 
 
-# celry -A <module> worker -l info -P eventlet

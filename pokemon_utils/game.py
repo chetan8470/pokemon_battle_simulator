@@ -5,21 +5,21 @@ class Game:
         self.player1 = Player(player1)
         self.player2 = Player(player2)
 
-    def (self):
+    def startGame(self):
         self.player1.set_pokemon_val()
         self.player2.set_pokemon_val()
         return
 
-    def (self):
+    def pokemon_fight1(self):
         damage1 = (self.player1.attack / 200) *100 -((self.player2.type1 / 4)*100 + (self.player2.type1 / 4)*100)
         return damage1
     
     
-    def (self):
+    def pokemon_fight2(self):
         damage2 = (self.player2.attack / 200) *100 -((self.player1.type1 / 4)*100 + (self.player1.type1 / 4)*100)
         return damage2
     
-    def (self):
+    def fight_result(self):
         damage1 = self.pokemon_fight1()
         damage2 = self.pokemon_fight2()
         if damage1 > damage2 :

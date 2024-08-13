@@ -140,6 +140,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # set the celery broker url
 CELERY_BROKER_URL = 'redis://127.0.0.1:6379'
 
+CELERY_BROKER_URL = 'redis://localhost:6379/0'
+
 # set the celery result backend
 CELERY_RESULT_BACKEND = 'redis://127.0.0.1:6379/'
 
